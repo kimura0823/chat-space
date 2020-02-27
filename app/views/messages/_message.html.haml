@@ -1,0 +1,9 @@
+.main-message__top
+  .main-message__top__name
+    = message.user.name
+    .main-message__top__name__coment
+      -if message.content.present?
+      = message.content
+        = image_tag message.image.url, class: '.main-message__top__name__coment__imege' if message.image.present?
+  .main-message__top__time
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")

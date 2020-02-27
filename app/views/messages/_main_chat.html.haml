@@ -1,35 +1,20 @@
 .main
-
-  .main-group 
+  .main-group
     .main-group__titlle
-      北斗の拳
+      = @group.name
       .main-group__titlle__list
-        Member:世紀末覇者ラオウ 世紀末救世主ケンシロウ 銀の聖者トキ
+        - @group.users.each do |user|
+          = user.name
     .main-group__btn
-      = link_to "#", class: "main-group__btn__edit" do
+      = link_to edit_group_path(@group), class: "main-group__btn__edit" do
         edit
   .main-message
-    .main-message__top
-      .main-message__top__name
-        世紀末覇者ラオウ
-        .main-message__top__name__coment
-          愛故に人は苦しまねばならぬ
-      .main-message__top__time
-        2020.02.02(mon) 00:00:00
-
-    .main-message__top
-      .main-message__top__name
-        銀の聖者トキ
-        .main-message__top__name__coment
-          激流を制するは静水
-      .main-message__top__time
-        2020.02.02(mon) 00:00:00
-      
+    = render @messages
   .main-form
-    %form.new_message
+    = form_for [@group, @message] do |f|
       .main-form__input
-        %input{type: "text",class: "main-form__input__text",placeholder: "type a message"}
-        %label{class: "main-form__input__image"}
+        = f.text_field :content, class: 'main-form__input__text',placeholder: 'type a message'
+        = f.label :image, class: 'main-form__input__image' do
           = icon('fas','image')
-          %input{type: "file",class: "main-form__input__image__file"}
-        %input{type: "submit",class: "submit-btn"}
+          = f.file_field :image, class: 'main-form__input__image__file'
+        = f.submit 'submit',class: 'submit-btn'

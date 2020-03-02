@@ -1,19 +1,19 @@
 .side
   .side-top
     .side-top__items
-      .side-name 世紀末覇者ラオウ
+      .side-name
       = current_user.name
       .side-links
-        = link_to "#", class: "side-links__btn" do
+        = link_to new_group_path, class: 'side-links__btn' do
           = icon('fas','edit')
         = link_to edit_user_path(current_user) do
-          = icon('fas','cog', class: 'icon')
+          = icon('fas','cog', class: 'side-links__btn')
 
   .side-group
-    .side-group__top
-      .side-group__name 世紀末覇者ラオウ
-      .side-group__message 我が生涯に一片の悔いなし
-      
-    .side-group__top
-      .side-group__name 世紀末救世主ケンシロウ
-      .side-group__message 北斗神拳は一子相伝
+    - current_user.groups.each do |group|
+      .side-group__top
+        = link_to group_messages_path(group) do
+          .side-group__name
+            = group.name
+          .side-group__message
+            = group.show_last_message

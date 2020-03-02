@@ -81,12 +81,15 @@
   width: calc(100vw - 300px);
   background-color: #ffffff;
 
+
+
   &-group{
     height: 100px;
     width: calc(100vw - 300px);
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
+    
 
     &__titlle{
       font-size: 20px;
@@ -120,6 +123,7 @@
       height: calc(100vh - 190px);
       width: calc(100vw - 300px);
       background-color: #fafafa;
+      overflow: scroll;
 
       &__top{
         width: 100%;

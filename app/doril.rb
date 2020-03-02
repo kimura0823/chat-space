@@ -7,9 +7,3 @@
 #   end
 #   puts "#{fruit[0]}の合計金額は#{sum}円です"
 # end
-# a = 0
-
-# while a <= 100 do
-#  puts a
-#  a += 1
-# 

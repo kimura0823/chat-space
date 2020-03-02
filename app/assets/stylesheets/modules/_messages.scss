@@ -170,11 +170,12 @@
 
           &__image{
             position:absolute;
-            top: 15px;
-            right: 120px;
+            top: 10x;
+            right: 10px;
             cursor: pointer;
             font-size: 1.3rem;
-
+            padding-right: 120px;
+            padding-top: 15px;
 
             &__file{
               display: none;

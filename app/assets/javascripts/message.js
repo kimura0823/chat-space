@@ -1,7 +1,6 @@
 $(function(){
   function buildHTML(message){
     var last_message_id = $('.message:last').data("message-id");
-    console.log(last_message_id);
     if ( message.image ) {
       var html =
         `<div class="main-message__top" data-message-id=${message.id}>
@@ -35,7 +34,6 @@ $(function(){
     }
 
     $('.new_message').on('submit', function(e){
-      console.log("aaa")
       e.preventDefault();
       var formData = new FormData(this);
       var url = $(this).attr('action');
@@ -48,7 +46,6 @@ $(function(){
         contentType: false,
       })
       .done(function(data){
-        console.log("aaa")
         var html = buildHTML(data);
         $('.main-message').append(html);
         $('.main-message').animate({ scrollTop: $('.main-message')[0].scrollHeight});
@@ -72,7 +69,6 @@ $(function(){
           data: {last_id: last_message_id} 
         })
       .done(function(messages) {
-        console.log("messages")
         if (messages.length !== 0) {
           var insertHTML = '';
           $.each(messages, function(i, message) {

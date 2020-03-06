@@ -9,7 +9,7 @@ $(function(){
             <div class="main-message__top__name__coment">
               ${message.content}
             </div>
-              <img src = ${message.image} >
+              <img src = "${message.image}" >
           </div>
           <div class="main-message__top__time">
             ${message.created_at}

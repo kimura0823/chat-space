@@ -144,28 +144,39 @@ a {
       &__name{
         font-size: 16px;
         color: #333333;
-
-        &__coment{
-          font-size: 14px;
-          color: #434A54;
-          padding-top: 12px;
-  
-      }
       }
 
       &__time{
         font-size: 14px;
-        color: #434A54;
+        color: #434A54;margin-left: 10px;
+
+
       }
 
     }
+
+    &__coment{
+      font-size: 14px;
+      color: #434A54;
+      padding-top: 12px;
+      margin-left: 40px;
+      padding-top: 35px;
+
+
+      &__image{
+        margin-left: 40px;
+        // display: block;
+      }
+
+
+  }
     }
 
       &-form{
         height: 90px;
         width: calc(100vw - 300px);
         background-color: #d2d2d2;
-        padding: 10px 40px;
+        padding: 20px 40px;
 
 
 

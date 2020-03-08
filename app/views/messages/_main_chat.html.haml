@@ -8,6 +8,7 @@
     .main-group__btn
       = link_to edit_group_path(@group), class: "main-group__btn__edit" do
         edit
+
   .main-message
     = render @messages
   .main-form
@@ -17,4 +18,4 @@
         = f.label :image, class: 'main-form__input__image' do
           = icon('fas','image')
           = f.file_field :image, class: 'main-form__input__image__file'
-        = f.submit 'submit', class: 'submit-btn'
+        = f.submit 'send', class: 'submit-btn'

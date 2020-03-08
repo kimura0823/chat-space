@@ -3,32 +3,37 @@ $(function(){
     var last_message_id = $('.message:last').data("message-id");
     if ( message.image ) {
       var html =
-        `<div class="main-message__top" data-message-id=${message.id}>
-          <div class="main-message__top__name">
-            ${message.user_name}
-            <div class="main-message__top__name__coment">
-              ${message.content}
-            </div>
-              <img src = "${message.image}" >
+        `<div class='message'>
+        <div class='main-message__top'>
+          <div class='main-message__top__name'>
+          ${message.user_name}
           </div>
-          <div class="main-message__top__time">
-            ${message.created_at}
+          <div class='main-message__top__time'>
+          ${message.created_at}
           </div>
-        </div>`
+        </div>
+        <div class='main-message__coment'>
+        ${message.content}
+        <br/>
+        <img src = "${message.image}", class= ".main-message__coment__image">
+        </div>
+      </div>`
     return html;
     } else {
       var html =
-      `<div class="main-message__top" data-message-id=${message.id}>
-        <div class="main-message__top__name">
-          ${message.user_name}
-            <div class="main-message__top__name__coment">
-              ${message.content}
-            </div>
+      `<div class='message'>
+      <div class='main-message__top'>
+        <div class='main-message__top__name'>
+        ${message.user_name}
         </div>
-        <div class="main-message__top__time">
-          ${message.created_at}
+        <div class='main-message__top__time'>
+        ${message.created_at}
         </div>
-      </div>`
+      </div>
+      <div class='main-message__coment'>
+      ${message.content}
+      </div>
+    </div>`
       return html;
       };
     }

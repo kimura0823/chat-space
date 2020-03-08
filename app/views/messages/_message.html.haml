@@ -2,9 +2,47 @@
   .main-message__top
     .main-message__top__name
       = message.user.name
-      .main-message__top__name__coment
-        -if message.content.present?
-          = message.content
-        = image_tag message.image.url, class: '.main-message__top__name__coment__image' if message.image.present?
     .main-message__top__time
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-message__coment
+    -if message.content.present?
+      = message.content
+      %br/
+      = image_tag message.image.url, class: '.main-message__coment__image' if message.image.present?
+
+
+-# .message{data: {message: {id: message.id}}}
+-#   .main-message__top
+-#     .main-message__top__name
+-#       = message.user.name
+-#       .main-message__top__name__coment
+-#         -if message.content.present?
+-#           = message.content
+-#         = image_tag message.image.url, class: '.main-message__top__name__coment__image' if message.image.present?
+-#     .main-message__top__time
+-#       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+
+-# <div class='message'>
+-#   <div class='main-message__top'>
+-#     <div class='main-message__top__name'>
+-#     </div>
+-#     <div class='main-message__top__time'>
+-#     </div>
+-#   </div>
+-#   <div class='main-message__coment'>
+-#   </div>
+-# </div>
+
+
+-# <div class="main-message__top" data-message-id=${message.id}>
+-#           <div class="main-message__top__name">
+-#             ${message.user_name}
+-#             <div class="main-message__top__name__coment">
+-#               ${message.content}
+-#             </div>
+-#               <img src = "${message.image}" >
+-#           </div>
+-#           <div class="main-message__top__time">
+-#             ${message.created_at}
+-#           </div>
+-#         </div>

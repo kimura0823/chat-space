@@ -3,6 +3,7 @@
     .main-group__titlle
       = @group.name
       .main-group__titlle__list
+        Member:
         - @group.users.each do |user|
           = user.name
     .main-group__btn

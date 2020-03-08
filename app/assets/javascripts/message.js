@@ -3,7 +3,7 @@ $(function(){
     var last_message_id = $('.message:last').data("message-id");
     if ( message.image ) {
       var html =
-      `<div class='message'>
+      `<div class='message' data-message-id=${message.id}>
         <div class='main-message__top'>
           <div class='main-message__top__name'>
           ${message.user_name}
@@ -22,7 +22,7 @@ $(function(){
     return html;
     } else {
       var html =
-    `<div class='message'>
+      `<div class='message' data-message-id=${message.id}>
       <div class='main-message__top'>
         <div class='main-message__top__name'>
         ${message.user_name}

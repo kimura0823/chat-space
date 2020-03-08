@@ -2,7 +2,7 @@
   .side-top
     .side-top__items
       .side-name
-      = current_user.name
+        = current_user.name
       .side-links
         = link_to new_group_path, class: 'side-links__btn' do
           = icon('fas','edit')
@@ -11,9 +11,9 @@
 
   .side-group
     - current_user.groups.each do |group|
-      .side-group__top
-        = link_to group_messages_path(group) do
-          .side-group__name
+      = link_to group_messages_path(group) do
+        .side-group__top   
+          .side-group__top__name
             = group.name
-          .side-group__message
+          .side-group__top__message
             = group.show_last_message

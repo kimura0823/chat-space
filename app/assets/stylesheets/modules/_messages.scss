@@ -53,27 +53,37 @@
      }
     }
 
-    .side-group{
+    &-group{
       height: calc(100vh - 100px);
       width: 300px;
       background-color: #2f3e51;
+      text-decoration: none;
+
       
       &__top{
         height: 100px;
         width: 300px;
         padding: 20px 20px 40px 20px;
-      }
+        text-decoration: none;
+
+      
 
       &__name{
+      text-decoration: none;
       font-size: 15px;
-      color: #ffffff;
+      color: fff;
 
      }
      &__message{
-       font-size: 11px;
-       color: #ffffff;
+      text-decoration: none;
+      font-size: 11px;
+      color: #ffffff;
      }
+    }
   }
+}
+a {
+  text-decoration: none;
 }
 
 .main{

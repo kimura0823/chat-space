@@ -117,14 +117,15 @@ a {
       height: 40px;
       width: 72px;
       font-size: 16px;
-      color: #38aef0;
+      color: red;
       border: 1px solid #38aef0;
       text-align: center;
       line-height: 40px;
       margin: 28px 15px 28px 0px;
       
       &__edit{
-      text-decoration: none;
+      // text-decoration: none;
+      color: #38aef0;
 
       }
     }

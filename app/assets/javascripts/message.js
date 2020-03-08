@@ -3,7 +3,7 @@ $(function(){
     var last_message_id = $('.message:last').data("message-id");
     if ( message.image ) {
       var html =
-        `<div class='message'>
+      `<div class='message'>
         <div class='main-message__top'>
           <div class='main-message__top__name'>
           ${message.user_name}
@@ -17,11 +17,12 @@ $(function(){
         <br/>
         <img src = "${message.image}", class= ".main-message__coment__image">
         </div>
+      </div>
       </div>`
     return html;
     } else {
       var html =
-      `<div class='message'>
+    `<div class='message'>
       <div class='main-message__top'>
         <div class='main-message__top__name'>
         ${message.user_name}
@@ -33,6 +34,7 @@ $(function(){
       <div class='main-message__coment'>
       ${message.content}
       </div>
+    </div>
     </div>`
       return html;
       };
@@ -65,15 +67,16 @@ $(function(){
     });
 
     var reloadMessages = function () {
-        var last_message_id = $('.main-message__top:last').data("message-id"); 
+        var last_message_id = $('.message:last').data("message-id"); 
         
         $.ajax({ 
           url: "api/messages", 
           type: 'get', 
           dataType: 'json', 
-          data: {last_id: last_message_id} 
+          data: {id: last_message_id} 
         })
       .done(function(messages) {
+        console.log(messages)
         if (messages.length !== 0) {
           var insertHTML = '';
           $.each(messages, function(i, message) {
